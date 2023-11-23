@@ -1,0 +1,38 @@
+<!-- Mike 10/10 -->
+
+<h3>Listado de heroes</h3>
+
+<!-- Tarea -->
+
+<!-- <h3>Heroe borrado: <small class="text-danger"> {{heroesBorrados[heroesBorrados.length -1]}} </small></h3>
+<h3 *ngIf="heroesBorrados.length === 0">No ha borrado nada</h3>
+
+<button (click)="borrarUltimoHeroe()" class="btn btn-outline-danger">Borrar ultimo heroe</button>
+
+
+
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+</ul> -->
+
+<div >
+  <h3 >Heroe borrado <small class="text-danger"> {{deletedHero}} </small></h3>
+</div>
+<!-- ng template es un div que no existe! solo agrupa elementos y no modifica estructuras HTML -->
+<ng-template #nothingWasDeleted>
+  <h3>no ha borrado nada</h3>
+</ng-template>
+
+
+<button
+  (click)="removeLastHeroe()"
+
+  *ngIf="heroNames.length > 0"
+>
+ Borrar Ultimo Heroe
+</button>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+</ul>
